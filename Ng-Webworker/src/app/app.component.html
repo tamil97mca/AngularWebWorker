@@ -1,0 +1,48 @@
+<div>
+
+  <div class="row text-center mt-5">
+
+    <div class="col">
+      <button class="btn btn-warning" (click)="cpuIntensiveWorkwithWebWorker()"> CPU Intensive Work <br><sub>with
+          Web Worker</sub>
+        <i *ngIf="isBusy" class="fa fa-spinner fa-spin fa-2x fa-fw"></i>
+      </button>
+      <ng-container *ngIf="webWorkerResult">
+        <div class="row pt-4">
+          <h1 class="display-4">{{webWorkerResult.TimeElapsed}}</h1>
+        </div>
+        <div class="row">
+          <h1 class="display-4">{{webWorkerResult.output}}</h1>
+        </div>
+      </ng-container>
+    </div>
+
+    <div class="col">
+      <button class="btn btn-danger" (click)="cpuIntensiveWorkwithoutWebWorker()"> CPU Intensive Work <br>
+        <sub>without Web Worker</sub>
+        <i *ngIf="isBusy" class="fa fa-spinner fa-spin fa-2x fa-fw"></i>
+      </button>
+      <ng-container *ngIf="result">
+        <div class="row pt-4">
+          <h1 class="display-4">{{result.TimeElapsed}}</h1>
+        </div>
+        <div class="row">
+          <h1 class="display-4">{{result.output}}</h1>
+        </div>
+      </ng-container>
+    </div>
+
+
+  </div>
+
+
+  <br>
+
+  <div class="text-center">
+    <div *ngIf="isLoading" class="spinner-border text-warning" style="width: 3rem; height: 3rem;" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+
+</div>
